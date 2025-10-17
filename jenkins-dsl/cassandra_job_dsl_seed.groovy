@@ -1226,7 +1226,8 @@ matrixJob('Cassandra-devbranch-before-5-cqlsh-tests') {
     parameters {
         stringParam('REPO', 'apache', 'The github user/org to clone cassandra repo from')
         stringParam('BRANCH', 'cassandra-4.1', 'The branch of cassandra to checkout, must be based off before cassandra-5.0')
-        stringParam('DTEST_REPO', "${dtestRepo}", 'The cassandra-dtest repo URL')
+        // stringParam('DTEST_REPO', "${dtestRepo}", 'The cassandra-dtest repo URL')
+        stringParam('DTEST_REPO', "https://github.com/apache/cassandra-dtest", 'The cassandra-dtest repo URL')
         stringParam('DTEST_BRANCH', 'trunk', 'The branch of cassandra-dtest to checkout')
     }
     axes {
