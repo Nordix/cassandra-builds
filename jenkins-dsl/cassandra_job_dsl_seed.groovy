@@ -32,6 +32,7 @@ def slaveArm64DtestLargeLabel = 'cassandra-arm64-dtest-large'
 def mainRepo   = binding.hasVariable('MAIN_REPO')   ? MAIN_REPO   : "https://github.com/nordix/cassandra"
 def buildsRepo = binding.hasVariable('BUILDS_REPO') ? BUILDS_REPO : "https://github.com/nordix/cassandra-builds"
 def buildsBranch = binding.hasVariable('BUILDS_BRANCH') ? BUILDS_BRANCH : "trunk"
+def dtestRepo = "https://github.com/apache/cassandra-dtest"
 
 def dtestBranch = "trunk"
 def buildDescStr = 'REF = ${GIT_BRANCH} <br /> COMMIT = ${GIT_COMMIT}'
@@ -1093,8 +1094,7 @@ archs.each {
             parameters {
                 stringParam('REPO', 'apache', 'The github user/org to clone cassandra repo from')
                 stringParam('BRANCH', 'cassandra-4.1', 'The branch of cassandra to checkout, must be based off before cassandra-5.0')
-                // stringParam('DTEST_REPO', "${dtestRepo}", 'The cassandra-dtest repo URL')
-                stringParam('DTEST_REPO', "https://github.com/apache/cassandra-dtest", 'The cassandra-dtest repo URL')
+                stringParam('DTEST_REPO', "${dtestRepo}", 'The cassandra-dtest repo URL')
                 stringParam('DTEST_BRANCH', 'trunk', 'The branch of cassandra-dtest to checkout')
                 stringParam('DOCKER_IMAGE', "${dtestDockerImage}", 'Docker image for running dtests')
             }
@@ -1226,8 +1226,7 @@ matrixJob('Cassandra-devbranch-before-5-cqlsh-tests') {
     parameters {
         stringParam('REPO', 'apache', 'The github user/org to clone cassandra repo from')
         stringParam('BRANCH', 'cassandra-4.1', 'The branch of cassandra to checkout, must be based off before cassandra-5.0')
-        // stringParam('DTEST_REPO', "${dtestRepo}", 'The cassandra-dtest repo URL')
-        stringParam('DTEST_REPO', "https://github.com/apache/cassandra-dtest", 'The cassandra-dtest repo URL')
+        stringParam('DTEST_REPO', "${dtestRepo}", 'The cassandra-dtest repo URL')
         stringParam('DTEST_BRANCH', 'trunk', 'The branch of cassandra-dtest to checkout')
     }
     axes {
@@ -1335,8 +1334,7 @@ pipelineJob('Cassandra-devbranch-before-5') {
     parameters {
         stringParam('REPO', 'apache', 'The github user/org to clone cassandra repo from')
         stringParam('BRANCH', 'cassandra-4.1', 'The branch of cassandra to checkout, must be based off before cassandra-5.0')
-        // stringParam('DTEST_REPO', "${dtestRepo}", 'The cassandra-dtest repo URL')
-        stringParam('DTEST_REPO', "https://github.com/apache/cassandra-dtest", 'The cassandra-dtest repo URL')
+        stringParam('DTEST_REPO', "${dtestRepo}", 'The cassandra-dtest repo URL')
         stringParam('DTEST_BRANCH', 'trunk', 'The branch of cassandra-dtest to checkout')
         stringParam('DOCKER_IMAGE', "${dtestDockerImage}", 'Docker image for running dtests')
     }
