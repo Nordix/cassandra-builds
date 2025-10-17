@@ -28,12 +28,10 @@ def slaveDtestLargeLabel = 'cassandra-dtest-large'
 def slaveArm64Label = 'cassandra-arm64'
 def slaveArm64DtestLabel = 'cassandra-arm64-dtest'
 def slaveArm64DtestLargeLabel = 'cassandra-arm64-dtest-large'
-def mainRepo = "https://github.com/apache/cassandra"
 
 def mainRepo   = binding.hasVariable('MAIN_REPO')   ? MAIN_REPO   : "https://github.com/nordix/cassandra"
 def buildsRepo = binding.hasVariable('BUILDS_REPO') ? BUILDS_REPO : "https://github.com/nordix/cassandra-builds"
 def buildsBranch = binding.hasVariable('BUILDS_BRANCH') ? BUILDS_BRANCH : "trunk"
-
 
 def dtestBranch = "trunk"
 def buildDescStr = 'REF = ${GIT_BRANCH} <br /> COMMIT = ${GIT_COMMIT}'
