@@ -1500,12 +1500,12 @@ multibranchPipelineJob('cassandra-java-driver') {
                     }
                 }
             }
-            buildStrategies {
-                buildChangeRequests {
-                    ignoreTargetOnlyChanges(true)
-                    ignoreUntrustedChanges(false)
-                }
-            }
+            // buildStrategies {
+            //     buildChangeRequests {
+            //         ignoreTargetOnlyChanges(true)
+            //         ignoreUntrustedChanges(false)
+            //     }
+            // }
         }
     }
     factory {
