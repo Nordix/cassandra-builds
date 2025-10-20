@@ -37,9 +37,9 @@ def dtestRepo = "https://github.com/apache/cassandra-dtest"
 def dtestBranch = "trunk"
 def buildDescStr = 'REF = ${GIT_BRANCH} <br /> COMMIT = ${GIT_COMMIT}'
 // From Cassandra 5.0 everything is defined in the in-tree Jenkinsfiles
-def cassandraBranches = ['cassandra-5.0', 'trunk']
+def cassandraBranches = ['cassandra-5.0']
 // Cassandra legacy branches (still using with external stages defined by dsl in this file)
-def legacyCassandraBranches = ['cassandra-2.2', 'cassandra-3.0', 'cassandra-3.11', 'cassandra-4.0', 'cassandra-4.1']
+def legacyCassandraBranches = []
 // Ant test targets
 def testTargets = ['test', 'test-burn', 'test-cdc', 'test-compression', 'stress-test', 'fqltool-test', 'long-test', 'jvm-dtest', 'jvm-dtest-upgrade', 'microbench']
 def testDockerImage = 'apache/cassandra-testing-ubuntu2004-java11-w-dependencies'
